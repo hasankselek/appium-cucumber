@@ -16,10 +16,10 @@ public class Driver {
     private static AndroidDriver<AndroidElement> appiumDriver;
     private static IOSDriver<IOSElement> iosDriver;
 
-    static final String TELEFONADI="Pixel 4";
-    static final String ANDROIDVERSION="10.0";
-    static final String PLATFORM="Android";
-    static final String OTOMASYON_ISMI="UiAutomator2";
+    static final String deviceName="Pixel 4";
+    static final String platformVersion="10.0";
+    static final String platformName="Android";
+    static final String automationName="UiAutomator2";
 
 
 
@@ -34,13 +34,13 @@ public class Driver {
         if (appiumDriver == null) {
 
             DesiredCapabilities caps =new DesiredCapabilities();
-            caps.setCapability(MobileCapabilityType.DEVICE_NAME, TELEFONADI);
-            caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, ANDROIDVERSION);
-            caps.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
-            caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, OTOMASYON_ISMI);
-            caps.setCapability("appPackage","com.ailebutcem");
-            caps.setCapability("appActivity","com.ailebutcem.MainActivity");
-            //caps.setCapability("app","/Users/hasan/Desktop/appium-cucumber/Apps/Aile Bütçem_1.07_apkcombo.com.apk");
+            caps.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
+            caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
+            caps.setCapability(MobileCapabilityType.PLATFORM_NAME, platformName);
+            caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, automationName);
+          // caps.setCapability("app","/Users/hasan/Desktop/appium-cucumber/Apps/Aile Bütçem_1.07_apkcombo.com.apk");
+             caps.setCapability("appPackage","com.ailebutcem");
+             caps.setCapability("appActivity","com.ailebutcem.MainActivity");
             caps.setCapability(MobileCapabilityType.NO_RESET,false);
             /* eger false olursa; her test baslangicinda kullanici datalari(tercihleri) sifirlanir ve uygulama
             her seferinde ilk yuklendigi haliyle calisir
